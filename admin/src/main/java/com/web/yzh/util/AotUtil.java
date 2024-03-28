@@ -32,7 +32,7 @@ public class AotUtil {
           } else {
             beanDefinitions.forEach(
                 beanDefinition -> {
-                  log.info("在{}中找到{}", basePackage, beanDefinition.getBeanClassName());
+                  log.info("找到{}", beanDefinition.getBeanClassName());
                   getLambdaAotClasses.add(beanDefinition.getBeanClassName());
                 });
           }

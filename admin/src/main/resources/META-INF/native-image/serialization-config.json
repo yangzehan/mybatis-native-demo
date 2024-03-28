@@ -1,0 +1,14 @@
+{
+  "types": [
+  ],
+  "lambdaCapturingTypes": [
+    {
+      "name": "com.web.yzh.controller.IndexController"
+    },
+    {
+      "name": "com.web.yzh.manager.DBUserDetailsManager"
+    }
+  ],
+  "proxies": [
+  ]
+}
