@@ -2,6 +2,7 @@ package com.web.yzh.controller;
 
 import com.web.yzh.exegesis.lambdaCapturingTypes;
 import com.web.yzh.generator.mapper.UserMapper;
+import com.web.yzh.pojo.CommonResult;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +18,9 @@ public class IndexController {
   @Autowired private UserMapper mapper;
 
   @GetMapping("/test")
-  public String createUser() {
+  public CommonResult<String> createUser() {
 
-    return "test";
+    return CommonResult.success("test");
   }
 
   @GetMapping("/test2")

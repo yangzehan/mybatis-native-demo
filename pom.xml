@@ -16,6 +16,7 @@
     <description>mybatis-native-demo</description>
     <modules>
         <module>admin</module>
+        <module>common</module>
     </modules>
     <properties>
         <java.version>21</java.version>
@@ -71,15 +72,19 @@
         </dependency>
 
     </dependencies>
+
     <build>
-        <directory>${basedir}/admin/build</directory>
+
         <plugins>
             <plugin>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
+
                 <configuration>
-                    <mainClass>com.web.yzh.NativeDemoApplication</mainClass>
+                    <!-- 开启快速构建模式  -->
+                    <quickBuild>true</quickBuild>
                     <buildArgs combine.children="append">
+                        <buildArg>-H:+AddAllCharsets</buildArg>
                         <buildArg>-Ob</buildArg>
                         <buildArg>--enable-url-protocols=http</buildArg>
                     </buildArgs>
@@ -88,21 +93,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.web.yzh.NativeDemoApplication</mainClass>
-                    <jvmArguments>-agentlib:native-image-agent=config-output-dir=/target/native-image3
-                    </jvmArguments>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
-
     <repositories>
         <repository>
             <id>aliyunmaven</id>

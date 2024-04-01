@@ -19,37 +19,33 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.web.yzh</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
-        <directory>${basedir}/build</directory>
-        <!--        <plugins>-->
-        <!--            <plugin>-->
-        <!--                <groupId>org.graalvm.buildtools</groupId>-->
-        <!--                <artifactId>native-maven-plugin</artifactId>-->
-        <!--                <configuration>-->
-        <!--                    <mainClass>com.web.yzh.NativeDemoApplication</mainClass>-->
-        <!--                    <buildArgs combine.children="append">-->
-        <!--                        <buildArg>-Ob</buildArg>-->
-        <!--                        <buildArg>&#45;&#45;enable-url-protocols=http</buildArg>-->
-        <!--                    </buildArgs>-->
-        <!--                </configuration>-->
-        <!--            </plugin>-->
-        <!--            <plugin>-->
-        <!--                <groupId>org.springframework.boot</groupId>-->
-        <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-        <!--                <configuration>-->
-        <!--                    <mainClass>com.web.yzh.NativeDemoApplication</mainClass>-->
-        <!--                    <jvmArguments>-agentlib:native-image-agent=config-output-dir=/target/native-image3-->
-        <!--                    </jvmArguments>-->
-        <!--                    <excludes>-->
-        <!--                        <exclude>-->
-        <!--                            <groupId>org.projectlombok</groupId>-->
-        <!--                            <artifactId>lombok</artifactId>-->
-        <!--                        </exclude>-->
-        <!--                    </excludes>-->
-        <!--                </configuration>-->
-        <!--            </plugin>-->
-        <!--        </plugins>-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+
+
+                    <mainClass>com.web.yzh.NativeDemoApplication</mainClass>
+                    <jvmArguments>-agentlib:native-image-agent=config-output-dir=${basedir}/target/native-image
+                    </jvmArguments>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 
