@@ -9,14 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <packaging>pom</packaging>
-    <groupId>com.example</groupId>
-    <artifactId>mybatis-native-demo</artifactId>
+    <groupId>org.dinky.natives</groupId>
+    <artifactId>dinky-native-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mybatis-native-demo</name>
-    <description>mybatis-native-demo</description>
+    <name>dinky-native-demo</name>
+    <description>dinky-native-demo</description>
     <modules>
         <module>admin</module>
         <module>common</module>
+        <module>core</module>
     </modules>
     <properties>
         <java.version>21</java.version>

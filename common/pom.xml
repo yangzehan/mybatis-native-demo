@@ -2,12 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.example</groupId>
-        <artifactId>mybatis-native-demo</artifactId>
+        <groupId>org.dinky.natives</groupId>
+        <artifactId>dinky-native-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+
     </parent>
 
-    <groupId>com.web.yzh</groupId>
+    <groupId>org.dinky.natives.common</groupId>
     <artifactId>common</artifactId>
     <packaging>jar</packaging>
 
