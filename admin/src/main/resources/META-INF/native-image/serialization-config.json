@@ -7,6 +7,9 @@
     },
     {
       "name": "com.web.yzh.manager.DBUserDetailsManager"
+    },
+    {
+      "name": "com.web.yzh.controller.userController"
     }
   ],
   "proxies": [
