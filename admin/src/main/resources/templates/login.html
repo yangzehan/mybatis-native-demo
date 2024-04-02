@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>登录</title>
+</head>
+<body>
+<h1>登录</h1>
+<div th:if="${param.error}">
+    错误的用户名和密码.
+</div>
+
+<!--method必须为"post"-->
+<!--th:action="@{/login}" ，
+使用动态参数，表单中会自动生成_csrf隐藏字段，用于防止csrf攻击
+login: 和登录页面保持一致即可，SpringSecurity自动进行登录认证-->
+<form th:action="@{/login}" method="post">
+    <div>
+        <!--name必须为"username"-->
+        <input type="text" name="username" placeholder="用户名"/>
+    </div>
+    <div>
+        <!--name必须为"password"-->
+        <input type="password" name="password" placeholder="密码"/>
+    </div>
+    <input type="submit" value="登录"/>
+</form>
+</body>
+</html>
