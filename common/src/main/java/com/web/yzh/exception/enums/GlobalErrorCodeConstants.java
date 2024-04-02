@@ -1,4 +1,4 @@
-package com.web.yzh.exception;
+package com.web.yzh.exception.enums;
 
 /**
  * 全局错误码枚举 0-999 系统异常编码保留
