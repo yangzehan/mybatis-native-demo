@@ -1,0 +1,11 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Hello Security!</title>
+</head>
+<body>
+<h1>Hello Security</h1>
+<!--通过使用@{/logout}，Thymeleaf将自动处理生成正确的URL，以适应当前的上下文路径。
+这样，无论应用程序部署在哪个上下文路径下，生成的URL都能正确地指向注销功能。-->
+<a th:href="@{/logout}">Log Out</a>
+</body>
+</html>
