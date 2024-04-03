@@ -4,8 +4,8 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import jakarta.annotation.Resource;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.dinky.natives.admin.generator.domain.User;
-import org.dinky.natives.admin.generator.mapper.UserMapper;
+import org.dinky.natives.admin.domain.User;
+import org.dinky.natives.admin.mapper.UserMapper;
 import org.dinky.natives.common.exception.BusinessException;
 import org.dinky.natives.common.exegesis.lambdaCapturingTypes;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
@@ -24,10 +24,9 @@ import org.springframework.stereotype.Component;
 @lambdaCapturingTypes
 @Component
 public class DBUserDetailsManager implements UserDetailsManager, UserDetailsService {
-  @Resource private UserMapper mapper;
-
   @Getter
   private final UserCache userCache = new SpringCacheBasedUserCache(new ConcurrentMapCache("user"));
+  @Resource private UserMapper mapper;
 
   @Override
   public void createUser(UserDetails userDetails) {

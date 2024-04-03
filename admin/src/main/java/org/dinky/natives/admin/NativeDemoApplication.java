@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication(proxyBeanMethods = false)
 @MapperScan(
-    basePackages = "org.dinky.natives.admin.generator.mapper",
+    basePackages = "org.dinky.natives.admin.mapper",
     sqlSessionTemplateRef = "sqlSessionTemplate")
 public class NativeDemoApplication {
 

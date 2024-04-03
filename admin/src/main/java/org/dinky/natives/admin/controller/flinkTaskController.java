@@ -1,8 +1,12 @@
 package org.dinky.natives.admin.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import jakarta.annotation.Resource;
+import org.dinky.natives.admin.domain.Task;
+import org.dinky.natives.admin.service.TaskService;
+import org.dinky.natives.common.pojo.PageParam;
 import org.dinky.natives.common.pojo.R;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 杨泽翰
@@ -10,11 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/flinkTask")
 public class flinkTaskController {
+  @Resource private TaskService taskService;
 
   @RequestMapping("/submitFlinkTask")
-  public R<String> submitTask() {
+  public R<String> submitTask(Task task) {
 
     return R.success("ok");
+  }
+
+  @PostMapping("/saveFlinkTask")
+  public R<Boolean> saveTask(@RequestBody Task task) {
+
+    return R.success(taskService.save(task));
   }
 
   @RequestMapping("/stopFlinkTask")
@@ -35,16 +46,16 @@ public class flinkTaskController {
     return R.success("ok");
   }
 
-  @RequestMapping("/getFlinkTask")
-  public R<String> getTask() {
+  @GetMapping("/getFlinkTask")
+  public R<Task> getTask(Long id) {
 
-    return R.success("ok");
+    return R.success(taskService.getById(id));
   }
 
-  @RequestMapping("/getFlinkTaskList")
-  public R<String> getTaskList() {
+  @GetMapping("/getFlinkTaskList")
+  public R<Page<Task>> getTaskList(PageParam pageParam) {
 
-    return R.success("ok");
+    return R.success(taskService.page(new Page<>(pageParam.getPageNo(), pageParam.getPageSize())));
   }
 
   @RequestMapping("/getFlinkTaskLog")

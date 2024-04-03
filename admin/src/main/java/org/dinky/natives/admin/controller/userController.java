@@ -1,8 +1,6 @@
 package org.dinky.natives.admin.controller;
 
 import org.dinky.natives.admin.manager.DBUserDetailsManager;
-import org.dinky.natives.admin.mapper.UserMapper;
-import org.dinky.natives.admin.service.UserService;
 import org.dinky.natives.common.exegesis.lambdaCapturingTypes;
 import org.dinky.natives.common.pojo.R;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @lambdaCapturingTypes
 public class userController {
-  @Autowired private UserService service;
-  @Autowired private UserMapper mapper;
+
   @Autowired private DBUserDetailsManager manager;
 
   @GetMapping("/test")
