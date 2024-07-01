@@ -1,7 +1,5 @@
 package com.web.yzh.util;
 
-import static java.lang.Class.forName;
-
 import com.web.yzh.exegesis.lambdaCapturingTypes;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +33,7 @@ public class AotUtil {
             beanDefinitions.forEach(
                 beanDefinition -> {
                   log.info("找到{}", beanDefinition.getBeanClassName());
+
                   getLambdaAotClasses.add(beanDefinition.getBeanClassName());
                 });
           }
@@ -46,13 +45,6 @@ public class AotUtil {
     List<String> basePackagelist = new ArrayList<>();
     basePackagelist.add("com.web.yzh");
     List<String> lambdaAotClass = getLambdaAotClass(basePackagelist);
-    lambdaAotClass.forEach(
-        s -> {
-          try {
-            System.out.println(forName(s));
-          } catch (ClassNotFoundException e) {
-
-          }
-        });
+    System.out.println(lambdaAotClass);
   }
 }

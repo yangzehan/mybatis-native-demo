@@ -10,7 +10,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 
 /**
- * 处理登录成功
+ * 处理登录成功监听
  *
  * @author 杨泽翰
  */
