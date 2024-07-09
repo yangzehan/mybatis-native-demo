@@ -6,6 +6,7 @@ import com.web.yzh.generator.domain.User;
 import com.web.yzh.generator.mapper.UserMapper;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,14 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 杨泽翰
  */
 @Tag(name = "测试接口")
-@RestController
+@Controller
 @lambdaCapturingTypes
 public class IndexController {
   @Autowired private UserMapper mapper;
 
-  @GetMapping("/test")
-  public User createUser() {
-
-    return mapper.selectOne(Wrappers.lambdaQuery(User.class).eq(User::getUsername, "admin"));
+@GetMapping("/")
+  public String index() {
+    return "index";
+  }
+ @GetMapping("/login")
+  public String login() {
+    return "login";
   }
 }
