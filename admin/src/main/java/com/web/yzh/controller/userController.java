@@ -1,5 +1,6 @@
 package com.web.yzh.controller;
 
+import cn.hutool.cache.impl.TimedCache;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.web.yzh.exegesis.lambdaCapturingTypes;
@@ -23,11 +24,14 @@ public class userController {
   @Autowired private UserService service;
   @Autowired private UserMapper mapper;
   @Autowired private DBUserDetailsManager manager;
-
+@Autowired
+private TimedCache<String,String> timedCache;
   @GetMapping("/test")
-  public R<String> createUser() {
+  public R<Object> test(String token) {
 
-    return R.success("test");
+
+    String data =  timedCache.get(token);
+    return R.success(data);
   }
 
   @GetMapping("/test2")
