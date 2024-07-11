@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 public class CacheConfig {
 
     @Bean
-    public TimedCache<String, String> simpleCacheManager(){
+    public TimedCache<String, Object> simpleCacheManager(){
         //创建缓存，默认4毫秒过期
 
 
-        return  new TimedCache<String, String>(60000);
+        return  new TimedCache<String, Object>(600000);
     }
 }

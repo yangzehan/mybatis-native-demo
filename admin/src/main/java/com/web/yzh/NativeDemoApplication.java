@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication(proxyBeanMethods = false)
 @MapperScan(
-    basePackages = "com.web.yzh.generator.mapper",
+    basePackages = "com.web.yzh.generator.**",
     sqlSessionTemplateRef = "sqlSessionTemplate")
 public class NativeDemoApplication {
 

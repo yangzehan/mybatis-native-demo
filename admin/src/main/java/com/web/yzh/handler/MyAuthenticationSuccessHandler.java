@@ -45,7 +45,7 @@ TimedCache timedCache;
 
 
 
-    timedCache.put(key, json);
+    timedCache.put(key, principal);
     // 返回响应
     response.setContentType("application/json;charset=UTF-8");
     response.getWriter().println(json);
